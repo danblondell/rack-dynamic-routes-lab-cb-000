@@ -4,7 +4,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    @@items = []
+    # @@items = []
 
     if req.path.match(/items/)
 
@@ -14,7 +14,7 @@ class Application
       if item
         resp.write item.price
         resp.status = 200
-        
+
       else
         resp.write "Item not found"
         resp.status = 400
