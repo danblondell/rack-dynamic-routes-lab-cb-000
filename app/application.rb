@@ -10,7 +10,7 @@ class Application
       item_name = req.path.split(/items/).last
       item = @@items.select { |i| i.name == item_name }.first
 
-      if item != nil
+      if item
         resp.write "#{item.price}"
         resp.status = 200
       else
